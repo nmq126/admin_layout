@@ -17,8 +17,8 @@
                         <li>
                             <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Demo</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="/admin/layout/table"><span class="mini-sub-pro">Table page</span></a></li>
-                                <li><a title="Add Professor" href="/admin/layout/form"><span class="mini-sub-pro">Form page</span></a></li>
+                                <li><a title="" href="/admin/event/list"><span class="mini-sub-pro">Table page</span></a></li>
+                                <li><a title="" href="/admin/event/create"><span class="mini-sub-pro">Form page</span></a></li>
                             </ul>
                         </li>
 

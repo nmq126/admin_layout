@@ -195,9 +195,9 @@ the specific language governing permissions and limitations under the Apache Lic
     });
 
     /**
-     * filters mouse events so an event is fired only if the mouse moved.
+     * filters mouse event so an event is fired only if the mouse moved.
      *
-     * filters out mouse events that occur when mouse is stationary but
+     * filters out mouse event that occur when mouse is stationary but
      * the elements under the pointer are scrolled.
      */
     function installFilteredMouseMove(element) {
@@ -689,7 +689,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 .data("select2", this)
                 .attr("tabindex", "-1")
                 .before(this.container)
-                .on("click.select2", killEvent); // do not leak click events
+                .on("click.select2", killEvent); // do not leak click event
 
             this.container.data("select2", this);
 
@@ -749,8 +749,8 @@ the specific language governing permissions and limitations under the Apache Lic
                 }
             }));
 
-            // trap all mouse events from leaving the dropdown. sometimes there may be a modal that is listening
-            // for mouse events outside of itself so it can close itself. since the dropdown is now outside the select2's
+            // trap all mouse event from leaving the dropdown. sometimes there may be a modal that is listening
+            // for mouse event outside of itself so it can close itself. since the dropdown is now outside the select2's
             // dom it will trigger the popup close, which is not what we want
             this.dropdown.on("click mouseup mousedown", function (e) { e.stopPropagation(); });
 
@@ -1325,7 +1325,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
             this.dropdown.addClass("select2-drop-active");
 
-            // attach listeners to events that can change the position of the container and thus require
+            // attach listeners to event that can change the position of the container and thus require
             // the position of the dropdown to be updated as well so it does not come unglued from the container
             var that = this;
             this.container.parents().add(window).each(function () {
