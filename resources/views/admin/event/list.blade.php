@@ -40,7 +40,11 @@
                     <div class="card">
                         <div class="product-status-wrap drp-lst">
                             <h4>Event list</h4>
-
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <div class="asset-inner">
                                 <table class="table-mailbox">
                                     <tr>
