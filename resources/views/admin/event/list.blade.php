@@ -58,7 +58,7 @@
                                         <th data-field="price" data-editable="true">Status</th>
                                         <th data-field="action">Action</th>
                                     </tr>
-                                    @foreach($data as $data)
+                                    @foreach($datas as $data)
                                         <tr>
                                             <td>{{ $data['id'] }}</td>
                                             <td>{{ $data['event_name'] }}</td>
@@ -91,29 +91,8 @@
                                         </tr>
                                     @endforeach
                                 </table>
+                                @include('pagination.default', ['paginator' => $datas])
                             </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-5">
-                                    <div>
-                                        <div style="margin: 35px 0 0">Showing 1 to 10 of 21 entries
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-7">
-                                    <div class="custom-pagination">
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination">
-                                                <li class="page-pre"><a href="#">‹</a></li>
-                                                <li class="page-number active"><a href="#">1</a></li>
-                                                <li class="page-number"><a href="#">2</a></li>
-                                                <li class="page-number"><a href="#">3</a></li>
-                                                <li class="page-next"><a href="#">›</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>

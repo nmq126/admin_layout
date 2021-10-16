@@ -46,7 +46,7 @@
                         <div class="sparkline12-hd">
                             <div class="main-sparkline12-hd">
                                 <h1>Delete Event</h1>
-                                <p style="color: red">Are you sure you want to delete this event</p>
+                                <strong style="color: red">Are you sure you want to delete this event</strong>
                             </div>
                         </div>
                         <div class="sparkline12-graph">

@@ -38,8 +38,8 @@ class EventController extends Controller
 
     public function getList()
     {
-        $data = Events::all()->where('status', '!=', '-1')->toArray();
-        return view('admin.event.list')->with('data', $data);
+        $data = Events::where('status', '!=', '-1')->paginate(5);
+        return view('admin.event.list', ['datas' => $data]);
     }
 
     public function getDetail(Request $request)
@@ -119,6 +119,6 @@ class EventController extends Controller
         $event->updated_at = Carbon::now();
         $event->status = -1;
         $event->save();
-        return redirect('admin/event/list');
+        return redirect('admin/event/list')->with('success', 'Event deleted!');
     }
 }
