@@ -96,10 +96,8 @@ class EventController extends Controller
         $event = new Events();
         $event->event_name = $eventName;
         $event->band_names = $bandNames;
-//        $event->start_date = Carbon::parse($startDate)->format('Y-m-d');
-        $event->start_date = date('Y-m-d', strtotime(str_replace('/', '-', $startDate)));
-        $event->end_date = date('Y-m-d', strtotime(str_replace('/', '-', $endDate)));
-//        $event->end_date = Carbon::parse($endDate)->format('Y-m-d');
+        $event->start_date = $startDate;
+        $event->end_date = $endDate;
         $event->portfolio = $portfolio;
         $event->ticket_price = $ticketPrice;
         $event->status = $status;
