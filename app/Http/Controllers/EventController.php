@@ -36,9 +36,10 @@ class EventController extends Controller
         $event->delete();
     }
 
-    public function getList()
+    public function getList(Request $request)
     {
-        $data = Events::where('status', '!=', '-1')->paginate(5);
+        $keyword = $request->get('keyword');
+        $data = Events::where('status', '!=', '-1')->where('event_name', 'like', '%' . $keyword . '%')->paginate(5);
         return view('admin.event.list', ['datas' => $data]);
     }
 
