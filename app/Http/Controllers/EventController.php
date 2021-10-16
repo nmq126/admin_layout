@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEventRequest;
 use App\Models\Events;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class EventController extends Controller
 
     public function getList()
     {
-        $data = Events::all()->where('status','!=','-1')->toArray();
+        $data = Events::all()->where('status', '!=', '-1')->toArray();
         return view('admin.event.list')->with('data', $data);
     }
 
@@ -83,7 +84,7 @@ class EventController extends Controller
         return view('admin.event.form');
     }
 
-    public function processForm(Request $request)
+    public function processForm(StoreEventRequest $request)
     {
         $eventName = $request->get('eventName');
         $bandNames = $request->get('bandNames');

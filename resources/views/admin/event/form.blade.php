@@ -46,6 +46,16 @@
                                 <h1>Create new event</h1>
                             </div>
                         </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Fix these errors and submit again:</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>- {{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="sparkline12-graph">
                             <div class="basic-login-form-ad">
                                 <div class="row">
@@ -62,6 +72,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter event's name" name="eventName">
+                                                            @error('eventName')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -74,6 +87,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter band's name" name="bandNames">
+                                                            @error('bandNames')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,6 +110,9 @@
                                                                             <input type="text" class="form-control"
                                                                                    name="startDate" value="">
                                                                         </div>
+                                                                        @error('startDate')
+                                                                        <div class="text-danger">* {{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -117,6 +136,9 @@
                                                                             <input type="text" class="form-control"
                                                                                    name="endDate" value="">
                                                                         </div>
+                                                                        @error('endDate')
+                                                                        <div class="text-danger">* {{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -132,7 +154,7 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
-                                                                   placeholder="Enter product's price" name="portfolio">
+                                                                   placeholder="Enter product's portfolio" name="portfolio">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,6 +167,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter product's price" name="ticketPrice">
+                                                            @error('ticketPrice')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,6 +188,9 @@
                                                                     <option value="2">Sắp diễn ra</option>
                                                                     <option value="3">Đã diễn ra</option>
                                                                 </select>
+                                                                @error('status')
+                                                                <div class="text-danger">* {{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                     </div>
