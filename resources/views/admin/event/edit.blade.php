@@ -46,6 +46,16 @@
                                 <h1>Edit event</h1>
                             </div>
                         </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Fix these errors and submit again:</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>- {{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="sparkline12-graph">
                             <div class="basic-login-form-ad">
                                 <div class="row">
@@ -62,6 +72,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter event's name" value="{{ $data['event_name'] }}" name="eventName">
+                                                            @error('eventName')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -74,6 +87,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter band's name" value="{{ $data['band_names'] }}" name="bandNames">
+                                                            @error('bandNames')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,6 +110,9 @@
                                                                             <input type="text" class="form-control"
                                                                                    name="startDate" value="{{ $data['start_date'] }}">
                                                                         </div>
+                                                                        @error('startDate')
+                                                                        <div class="text-danger">* {{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -117,6 +136,9 @@
                                                                             <input type="text" class="form-control"
                                                                                    name="endDate" value="{{ $data['end_date'] }}">
                                                                         </div>
+                                                                        @error('endDate')
+                                                                        <div class="text-danger">* {{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -145,6 +167,9 @@
                                                         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
                                                             <input type="text" class="form-control"
                                                                    placeholder="Enter product's price" value="{{ $data['ticket_price'] }}" name="ticketPrice">
+                                                            @error('ticketPrice')
+                                                            <div class="text-danger">* {{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -175,8 +200,7 @@
                                                                     <button class="btn btn-sm btn-primary login-submit-cs"
                                                                             type="submit">Save
                                                                     </button>
-                                                                    <button class="btn btn-white" type="reset">Reset
-                                                                    </button>
+                                                                    <a href="/admin/event/list" class="btn btn-default float-right">Back To List</a>
                                                                 </div>
                                                             </div>
                                                         </div>

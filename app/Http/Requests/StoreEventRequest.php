@@ -26,8 +26,8 @@ class StoreEventRequest extends FormRequest
         return [
             'eventName' => 'required|min:21',
             'bandNames' => 'required',
-            'startDate' => 'required|date_format:"d/m/Y"|after:today',
-            'endDate' => 'required|date_format:"d/m/Y"|after:startDate',
+            'startDate' => 'required|after:today',
+            'endDate' => 'required|after:startDate',
             'ticketPrice' => 'required|gt:0',
             'status' => 'required'
         ];

@@ -56,7 +56,7 @@ class EventController extends Controller
         return view('admin.event.edit')->with('data', $data);
     }
 
-    public function processEdit(Request $request)
+    public function processEdit(StoreEventRequest $request)
     {
         $id = $request->get('id');
         $eventName = $request->get('eventName');
@@ -69,14 +69,14 @@ class EventController extends Controller
         $event = Events::find($id);
         $event->event_name = $eventName;
         $event->band_names = $bandNames;
-        $event->start_date = Carbon::parse($startDate)->format('Y-m-d');
-        $event->end_date = Carbon::parse($endDate)->format('Y-m-d');
+        $event->start_date = $startDate;
+        $event->end_date = $endDate;
         $event->portfolio = $portfolio;
         $event->ticket_price = $ticketPrice;
         $event->status = $status;
         $event->updated_at = Carbon::now();
         $event->save();
-        return redirect('admin/event/list');
+        return redirect('admin/event/list')->with('success', 'Event edited successfully!');
     }
 
     public function handleForm()
