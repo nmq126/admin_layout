@@ -151,6 +151,7 @@
                                                         <div class="col-lg-9">
                                                             <div class="login-horizental cancel-wp pull-left form-bc-ele">
                                                                 <form action="/admin/event/delete?id={{ $data['id'] }}" method="post">
+                                                                    @csrf
                                                                     <button class="btn btn-danger">Confirm</button>
                                                                     <a href="/admin/event/list" class="btn btn-default float-right">Back To List</a>
                                                                 </form>
